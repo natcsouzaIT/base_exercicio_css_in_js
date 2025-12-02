@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 type Props = {
-  titulo: string;
-  localizacao: string;
-  nivel: string;
-  modalidade: string;
-  salarioMin: number;
-  salarioMax: number;
-  requisitos: string[];
-};
+  titulo: string
+  localizacao: string
+  nivel: string
+  modalidade: string
+  salarioMin: number
+  salarioMax: number
+  requisitos: string[]
+}
 
 const VagaItem = styled.li`
   border: 1px solid var(--cor-principal);
@@ -17,12 +17,25 @@ const VagaItem = styled.li`
   padding: 16px;
   transition: all ease 0.3s;
   border-radius: 8px;
-`;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+  }
+
+  &:hover a {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+  }
+`
 
 const VagaTitulo = styled.h3`
   font-weight: bold;
   margin-bottom: 16px;
-`;
+`
 
 const VagaLink = styled.a`
   border-color: var(--cor-secundaria);
@@ -40,7 +53,7 @@ const VagaLink = styled.a`
   @media (max-width: 768px) {
     display: block;
   }
-`;
+`
 
 const Vaga = (props: Props) => (
   <VagaItem>
@@ -56,6 +69,6 @@ const Vaga = (props: Props) => (
     </ul>
     <VagaLink href="#">Ver detalhes e candidatar-se</VagaLink>
   </VagaItem>
-);
+)
 
-export default Vaga;
+export default Vaga
